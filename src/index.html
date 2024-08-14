@@ -12,6 +12,63 @@
 <body class="bg-dark">
     <!-- header -->
     <header>
+        <!-- navbar -->
+        <nav class="z-2 navbar navbar-expand-lg position-absolute text-light w-100">
+            <div class="col-6">
+                <a class="align-items-center d-flex navbar-brand text-white" href="#">
+                    <img src="assets/placeholder.webp" alt="Logo" width="80" height="80"
+                        class="d-inline-block align-text-top">
+                    Greenfield
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks"
+                aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse p-4" id="navbarLinks">
+                <ul class="navbar-nav w-100 justify-content-between mb-2 mb-lg-0" id="links">
+                    <li class="nav-item">
+                        <a class="text-light nav-link"
+                            href="#">About
+                            us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-light nav-link"
+                            href="#">Matches
+                            and Results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-light nav-link"
+                            href="#">Youth
+                            Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-light nav-link"
+                            href="#">Community
+                            Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-light nav-link"
+                            href="#">Contact
+                            us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-light nav-link"
+                            href="#">Sponsors
+                            and Partners</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="overlay position-absolute opacity-75"></div>
+        <!-- hero -->
+        <div class="hero-section d-flex align-items-center justify-content-center">
+            <div class="container text-center position-relative">
+                <h1 class="display-4">Welcome to Greenfield United FC</h1>
+                <p class="lead">Join us in our journey to promote youth football and community engagement.</p>
+            </div>
+        </div>
     </header>
     <!-- main -->
     <main class="container">
@@ -23,7 +80,10 @@
         <!-- sponsors and partners -->
     </main>
     <!-- footer -->
-    <footer>
+    <footer class="text-light bg-dark text-center py-3">
+        <span>&copy; 2024 <a class="text-light" href="https://www.thomasmore.be/" target="_blank">Thomas More</a>. All rights reserved.</span>
+        <p>Page authored by Marin Janushaj.</p>
+        <p>This is a fictional website created for illustrative purposes only.</p>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>

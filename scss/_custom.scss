@@ -1,0 +1,21 @@
+.overlay {
+    width: 100%;
+    z-index: 0;
+    background-color: gray;
+    height: 100vh;
+    min-height: 300px;
+}
+
+.hero-section {
+    background-image: url('../assets/images/placeholder.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    min-height: 300px;
+}
+
+div.navbar-collapse.show {
+    background-color: rgba(128, 128, 128, 0.5);
+    backdrop-filter: blur(10px);
+}
