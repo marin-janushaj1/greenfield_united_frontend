@@ -15,6 +15,31 @@
     min-height: 300px;
 }
 
+.sections section:hover {
+    cursor: pointer;
+}
+
+.sections section.active:hover {
+    cursor: unset;
+}
+
+.sections section.active .section-content {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.sections section.active .section-content .logo-container,
+.sections .content {
+    display: none;
+}
+
+.sections section.active .content {
+    display: unset;
+    width: 100%;
+    max-width: 900px;
+}
+
 div.navbar-collapse.show {
     background-color: rgba(128, 128, 128, 0.5);
     backdrop-filter: blur(10px);
