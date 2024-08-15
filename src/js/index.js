@@ -133,7 +133,6 @@ async function renderEvents() {
     }).then(response => response.json())
     .then(data => {
         let events = data.communityEvents;
-        console.log(data)
 
         events.forEach(event => {
             let cloneStructure = structureElement.cloneNode(true);
