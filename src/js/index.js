@@ -12,8 +12,8 @@ const ACTIVE_CLASSES = [
 // Backend URLs and endpoints
 const MATCH_STRUCTURE_ENDPOINT = 'structures/match.html';
 const EVENT_STRUCTURE_ENDPOINT = 'structures/event.html';
-const GET_MATCHES_ENDPOINT = 'http://127.0.0.1:5500/db.json';
-const GET_EVENTS_ENDPOINT = 'http://127.0.0.1:5500/db.json';
+const GET_MATCHES_ENDPOINT = 'https://my-json-server.typicode.com/marin-janushaj1/greenfield_united_frontend/db';
+const GET_EVENTS_ENDPOINT = 'https://my-json-server.typicode.com/marin-janushaj1/greenfield_united_frontend/db';
 const CONTACT_US_ENDPOINT = 'http://127.0.0.1:8000/submit-form/';
 
 // DOM element selections and event listeners
@@ -74,40 +74,44 @@ async function renderMatches() {
     const parser = new DOMParser();
     let structureElement = (parser.parseFromString(result, 'text/html')).querySelector('.match-container');
 
-    fetch(GET_MATCHES_ENDPOINT)
-        .then(response => response.json())
-        .then(data => {
-            let matches = data.matches;
-            let homeTeam, awayTeam, homeTeamScore, awayTeamScore, matchDate, matchTime;
+    fetch(GET_MATCHES_ENDPOINT, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => response.json())
+    .then(data => {
+        let matches = data.matches;
+        let homeTeam, awayTeam, homeTeamScore, awayTeamScore, matchDate, matchTime;
 
-            matches.forEach(match => {
-                let cloneStructure = structureElement.cloneNode(true);
-                homeTeam = cloneStructure.querySelector('.home-team');
-                homeTeam.textContent = match.home_team;
+        matches.forEach(match => {
+            let cloneStructure = structureElement.cloneNode(true);
+            homeTeam = cloneStructure.querySelector('.home-team');
+            homeTeam.textContent = match.home_team;
 
-                awayTeam = cloneStructure.querySelector('.away-team');
-                awayTeam.textContent = match.away_team;
+            awayTeam = cloneStructure.querySelector('.away-team');
+            awayTeam.textContent = match.away_team;
 
-                homeTeamScore = cloneStructure.querySelector('.home-team-score');
-                homeTeamScore.textContent = match.home_team_score;
+            homeTeamScore = cloneStructure.querySelector('.home-team-score');
+            homeTeamScore.textContent = match.home_team_score;
 
-                awayTeamScore = cloneStructure.querySelector('.away-team-score');
-                awayTeamScore.textContent = match.away_team_score;
+            awayTeamScore = cloneStructure.querySelector('.away-team-score');
+            awayTeamScore.textContent = match.away_team_score;
 
-                matchDate = cloneStructure.querySelector('.match-date');
-                matchDate.textContent = match.match_date;
+            matchDate = cloneStructure.querySelector('.match-date');
+            matchDate.textContent = match.match_date;
 
-                matchTime = cloneStructure.querySelector('.match-time');
-                matchTime.textContent = match.match_time;
+            matchTime = cloneStructure.querySelector('.match-time');
+            matchTime.textContent = match.match_time;
 
-                matchesContainer.append(cloneStructure);
-            });
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-            let errorMessage = 'An error occurred while fetching the matches. Please try again later.';
-            alert(errorMessage);
+            matchesContainer.append(cloneStructure);
         });
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        let errorMessage = 'An error occurred while fetching the matches. Please try again later.';
+        alert(errorMessage);
+    });
 }
 
 // Function to fetch and render events
@@ -121,44 +125,49 @@ async function renderEvents() {
 
     let cardName, cardDate, cardTime, cardLocation, cardDescripiton, cardOrganizer, eventContact;
 
-    fetch(GET_EVENTS_ENDPOINT)
-        .then(response => response.json())
-        .then(data => {
-            let events = data.communityEvents;
+    fetch(GET_EVENTS_ENDPOINT, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => response.json())
+    .then(data => {
+        let events = data.communityEvents;
+        console.log(data)
 
-            events.forEach(event => {
-                let cloneStructure = structureElement.cloneNode(true);
+        events.forEach(event => {
+            let cloneStructure = structureElement.cloneNode(true);
 
-                cardName = cloneStructure.querySelector('.event-name');
-                cardName.textContent = event.event_name;
+            cardName = cloneStructure.querySelector('.event-name');
+            cardName.textContent = event.event_name;
 
-                cardDate = cloneStructure.querySelector('.event-date');
-                cardDate.textContent = event.event_date;
+            cardDate = cloneStructure.querySelector('.event-date');
+            cardDate.textContent = event.event_date;
 
-                cardTime = cloneStructure.querySelector('.event-time');
-                cardTime.textContent = event.event_time;
+            cardTime = cloneStructure.querySelector('.event-time');
+            cardTime.textContent = event.event_time;
 
-                cardLocation = cloneStructure.querySelector('.event-location');
-                cardLocation.textContent = event.location;
+            cardLocation = cloneStructure.querySelector('.event-location');
+            cardLocation.textContent = event.location;
 
-                cardDescripiton = cloneStructure.querySelector('.event-description');
-                cardDescripiton.textContent = event.description;
+            cardDescripiton = cloneStructure.querySelector('.event-description');
+            cardDescripiton.textContent = event.description;
 
-                cardOrganizer = cloneStructure.querySelector('.event-organizer');
-                cardOrganizer.textContent = event.organizer;
+            cardOrganizer = cloneStructure.querySelector('.event-organizer');
+            cardOrganizer.textContent = event.organizer;
 
-                eventContact = cloneStructure.querySelector('.event-contact');
-                eventContact.textContent = event.contact_info;
-                eventContact.setAttribute('href', event.contact_info);
+            eventContact = cloneStructure.querySelector('.event-contact');
+            eventContact.textContent = event.contact_info;
+            eventContact.setAttribute('href', event.contact_info);
 
-                eventContainer.append(cloneStructure);
-            });
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-            let errorMessage = 'An error occurred while fetching the events. Please try again later.';
-            alert(errorMessage);
+            eventContainer.append(cloneStructure);
         });
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        let errorMessage = 'An error occurred while fetching the events. Please try again later.';
+        alert(errorMessage);
+    });
 }
 
 // Invoke functions to fetch and render matches and events on page load

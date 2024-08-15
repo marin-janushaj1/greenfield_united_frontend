@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "noto-sans";
+    src: url("fonts/static/NotoSans_Condensed-Regular");
+}
+
+body{
+    font-family: "noto-sans";
+}
+
 .overlay {
     width: 100%;
     z-index: 0;
@@ -7,7 +16,7 @@
 }
 
 .hero-section {
-    background-image: url('../assets/images/placeholder.webp');
+    background-image: url('../assets/images/herobackground.jpg');
     background-size: cover;
     background-position: center;
     color: white;
