@@ -26,24 +26,6 @@
             "description": "An exhibition showcasing the works of local artists. Free entry for all visitors.",
             "organizer": "Art Lovers Association",
             "contact_info": "artlovers@example.com"
-        },
-        {
-            "event_name": "Charity Run",
-            "event_date": "2024-09-12",
-            "event_time": "07:00:00",
-            "location": "City Park",
-            "description": "Join us for a 5K run to raise funds for local charities. All participants will receive a medal and t-shirt.",
-            "organizer": "City Charity Foundation",
-            "contact_info": "charityrun@foundation.com"
-        },
-        {
-            "event_name": "Tech Conference",
-            "event_date": "2024-10-02",
-            "event_time": "08:00:00",
-            "location": "Tech Innovation Center",
-            "description": "A conference for tech enthusiasts and professionals. Keynote speakers from leading tech companies.",
-            "organizer": "Tech Innovators Group",
-            "contact_info": "info@techinnovators.com"
         }
     ],
     "matches": [
@@ -110,50 +92,6 @@
             "match_time": "19:00:00",
             "home_team_score": 0,
             "away_team_score": 0,
-            "created_at": "2024-07-01 12:00:00",
-            "updated_at": "2024-07-01 12:00:00"
-        },
-        {
-            "id": 7,
-            "home_team": "Greenfield United FC",
-            "away_team": "City Strikers",
-            "match_date": "2024-09-21",
-            "match_time": "15:00:00",
-            "home_team_score": 4,
-            "away_team_score": 2,
-            "created_at": "2024-07-01 12:00:00",
-            "updated_at": "2024-07-01 12:00:00"
-        },
-        {
-            "id": 8,
-            "home_team": "River Valley FC",
-            "away_team": "Greenfield United FC",
-            "match_date": "2024-09-28",
-            "match_time": "17:00:00",
-            "home_team_score": 1,
-            "away_team_score": 1,
-            "created_at": "2024-07-01 12:00:00",
-            "updated_at": "2024-07-01 12:00:00"
-        },
-        {
-            "id": 9,
-            "home_team": "Greenfield United FC",
-            "away_team": "Forest Rangers",
-            "match_date": "2024-10-05",
-            "match_time": "16:00:00",
-            "home_team_score": 2,
-            "away_team_score": 3,
-            "created_at": "2024-07-01 12:00:00",
-            "updated_at": "2024-07-01 12:00:00"
-        },
-        {
-            "id": 10,
-            "home_team": "Coastal Mariners",
-            "away_team": "Greenfield United FC",
-            "match_date": "2024-10-12",
-            "match_time": "18:00:00",
-            "home_team_score": 0,
-            "away_team_score": 2,
             "created_at": "2024-07-01 12:00:00",
             "updated_at": "2024-07-01 12:00:00"
         }
