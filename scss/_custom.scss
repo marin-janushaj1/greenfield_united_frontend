@@ -40,6 +40,14 @@
     max-width: 900px;
 }
 
+.btn,
+input,
+textarea,
+.match-container,
+.event-card {
+    transform: skew(3deg);
+}
+
 div.navbar-collapse.show {
     background-color: rgba(128, 128, 128, 0.5);
     backdrop-filter: blur(10px);
